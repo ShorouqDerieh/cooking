@@ -28,7 +28,7 @@ public class chef {
     public void setTaskCount(int taskCount) {
         this.taskCount = taskCount;
     }
-    public void   addTask(){
+    public void  incrementTask(){
         this.taskCount++;
     }
 }
