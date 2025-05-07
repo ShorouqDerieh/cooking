@@ -4,6 +4,7 @@ public class chef {
     private String name;
     private String expertise;
     private int taskCount;
+    private String email;
 
     public chef(String name, String expertise, int taskCount) {
         this.name = name;
@@ -30,5 +31,11 @@ public class chef {
     }
     public void  incrementTask(){
         this.taskCount++;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getEmail() {
+        return email;
     }
 }
