@@ -5,6 +5,9 @@ public class ingredient {
     private int quantity;
     private int minquantity;
     private double price;
+    public ingredient() {
+
+    }
     public ingredient(String name, int quantity, int minquantity) {
         this.name = name;
         this.quantity = quantity;
