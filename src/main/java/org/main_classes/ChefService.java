@@ -31,6 +31,19 @@ public class ChefService {
         return customers;
     }
 
+    public void viewCustomerPreferences(Customer customer) {
+        System.out.println("Dietary preferences: " + customer.getDietaryPreferences());
+        System.out.println("Allergies: " + customer.getAllergies());
+    }
+
+    public void suggestMealPlans(Customer customer) {
+        System.out.println("Chef suggests a personalized meal plan for " + customer.getName());
+    }
+
+    public void validateIngredientCombination(String ingredient1, String ingredient2) {
+        // Logic for validating the combination of ingredients
+        System.out.println("Checking if " + ingredient1 + " and " + ingredient2 + " can be combined...");
+    }
 }
 
 

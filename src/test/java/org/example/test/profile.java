@@ -80,10 +80,10 @@ public class profile {
         // Write code here that turns the phrase above into concrete actions
      //   throw new io.cucumber.java.PendingException();
         if (dietaryPreference == null) {
-            dietaryPreference = "vegetarian";  // قيمة افتراضية
+            dietaryPreference = "vegetarian";
         }
         if (allergy == null) {
-            allergy = "peanuts";               // قيمة افتراضية
+            allergy = "peanuts";
         }
         iHaveEnteredMyDietaryPreferencesAsAndAllergiesAs("vegetarian", "peanuts");
     }
