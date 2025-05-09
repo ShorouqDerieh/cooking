@@ -41,4 +41,30 @@ public class lowStockService {
         }
         return emails;
     }
+    public List<String> generateDailySummaryEmail(List<ingredient> ingredients) {
+        List<String> result = new ArrayList<>();
+        StringBuilder message = new StringBuilder("The following ingredients are below their minimum stock levels:\n");
+        boolean found = false;
+
+        for (ingredient item : ingredients) {
+            if (item.getQuantity() < item.getMinquantity()) {
+                message.append("- ").append(item.getName())
+                        .append(" (Stock: ").append(item.getQuantity())
+                        .append(", Min: ").append(item.getMinquantity()).append(")\n");
+                found = true;
+            }
+        }
+
+        if (found) {
+            result.add("Subject: Daily Low-Stock Summary\n" + message.toString());
+        }
+        return result;
+    }
+
+    public void sendDailySummary(String subject) {
+        for (String email : emails) {
+            service.sendEmail(manager.getEmail(), subject, email);
+            send = true;
+        }
+    }
 }

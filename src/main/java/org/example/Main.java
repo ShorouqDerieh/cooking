@@ -14,7 +14,6 @@ import java.util.Properties;
 public class Main {
     public static void main(String[] args) throws MessagingException {
 System.out.println("*********************Special Cook Management System***************************");
-orderDisplay order=new orderDisplay("Onion","Supplier 2",25.5,9);
-order.PrintOrder();
+
         }
     }

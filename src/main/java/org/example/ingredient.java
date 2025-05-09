@@ -1,10 +1,13 @@
 package org.example;
 
+import java.time.LocalDate;
+
 public class ingredient {
     private String name;
     private int quantity;
     private int minquantity;
     private double price;
+    private LocalDate expiryDate;
     public ingredient() {
 
     }
@@ -12,6 +15,13 @@ public class ingredient {
         this.name = name;
         this.quantity = quantity;
         this.minquantity = minquantity;
+    }
+    public LocalDate getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
     }
     public String getName() {
         return name;
