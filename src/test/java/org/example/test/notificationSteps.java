@@ -15,7 +15,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class notificationSteps {
-    customer cust;
+    NewCustomer cust;
     meal me;
     List<meal> meals;
     boolean sent;
@@ -25,7 +25,7 @@ public class notificationSteps {
     EmailService service;
     @Given("i am a customer and my name is {string} and my email is {string}")
     public void iAmACustomerAndMyNameIsAndMyEmailIs(String arg0, String arg1) {
-        cust = new customer(arg0, arg1);
+        cust = new NewCustomer(arg0, arg1);
     }
     @And("i have ordered meal with a delievary time {string} minutes from now")
     public void iHaveOrderedMealWithADelievaryTimeMinutesFromNow(String arg0) {

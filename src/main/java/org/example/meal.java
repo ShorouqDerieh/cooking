@@ -5,21 +5,21 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class meal {
-    customer cus;
+    NewCustomer cus;
     LocalTime delievryTime;
     boolean delivered;
-    public meal(customer cus, LocalTime deliveryTime, boolean delivered) {
+    public meal(NewCustomer cus, LocalTime deliveryTime, boolean delivered) {
         this.cus = cus;
         this.delievryTime=deliveryTime;
         this.delivered=false;
     }
-    public void setcus(customer cus) {
+    public void setcus(NewCustomer cus) {
         this.cus = cus;
     }
     public void setDelivered(boolean delivered) {
         this.delivered = delivered;
     }
-    public customer getCus() {
+    public NewCustomer getCus() {
         return cus;
     }
     public void setDeliveryTime(LocalTime deliveryTime) {

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 plugin={"summary","html:target/cucumber/wikipedia.html"},
 monochrome=true,
 snippets=CucumberOptions.SnippetType.CAMELCASE,
-glue={"org.example.test"}
+        glue={"org.example.test"}
 )
 public class AcceptanceTests{
 
