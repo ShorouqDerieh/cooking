@@ -52,7 +52,7 @@ public class Customer implements Serializable {
         System.out.println("Dietary preferences and allergies saved.");
     }
 
-    // View past orders
+    // view past orders
     public void viewPastOrders() {
         if (pastOrders.isEmpty()) {
             System.out.println("You have no past orders.");
@@ -64,7 +64,7 @@ public class Customer implements Serializable {
         }
     }
 
-    // Reorder a meal
+    // reorder a meal
     public void reorderMeal(String meal) {
         System.out.println("Reordering: " + meal);
         pastOrders.add(meal);
@@ -72,7 +72,7 @@ public class Customer implements Serializable {
 
 
 
-    // Add past order
+    // add past order
     public void addPastOrder(String order) {
         pastOrders.add(order);
     }

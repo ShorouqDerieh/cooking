@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.*;
 public class MealRecommendationService {
     public List<String> recommendMeals(Customer customer) {
-        // Example meal list (in real system, this comes from a database)
+        // Example
         List<String> allMeals = Arrays.asList(
                 "Vegetarian Salad",
                 "Vegetarian Pasta",

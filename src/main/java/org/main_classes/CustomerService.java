@@ -31,7 +31,7 @@ public class CustomerService {
 
 
 
-    // Register a customer
+
     //private Map<String, Customer> customerDatabase = new HashMap<>();
     private final String FILE_NAME = "customers.ser";
 
@@ -64,6 +64,5 @@ public class CustomerService {
 
 
 
-    // You no longer need a separate list of customers, as the map serves the purpose
-    // public List<Customer> getAllCustomers()
+
 }
