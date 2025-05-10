@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="FinancialReport"
+              pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30"
+              topMargin="40" bottomMargin="40" uuid="12345678-1234-1234-1234-123456789000">
+
+    <!-- Parameters -->
+    <parameter name="selectedMonth" class="java.lang.String"/>
+    <parameter name="reportDate" class="java.lang.String"/>
+
+    <!-- Fields -->
+    <field name="productName" class="java.lang.String"/>
+    <field name="quantitySold" class="java.lang.Integer"/>
+    <field name="totalRevenue" class="java.lang.Double"/>
+
+    <!-- Title -->
+    <title>
+        <band height="80">
+            <staticText>
+                <reportElement x="0" y="0" width="535" height="30"/>
+                <textElement textAlignment="Center">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Special Cook System - Financial Report]]></text>
+            </staticText>
+
+            <textField>
+                <reportElement x="0" y="40" width="535" height="20"/>
+                <textElement textAlignment="Center"/>
+                <textFieldExpression><![CDATA["Report Date: " + $P{reportDate}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <!-- Column Header -->
+    <columnHeader>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="200" height="30"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Product Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="200" y="0" width="150" height="30"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Quantity Sold]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="150" height="30"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Total Revenue]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!-- Detail -->
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="200" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{quantitySold}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA["$" + String.format("%.2f", $F{totalRevenue})]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <!-- Summary -->
+    <summary>
+        <band height="100">
+            <staticText>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <text><![CDATA[Selected Month:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="150" y="0" width="385" height="20"/>
+                <textFieldExpression><![CDATA[$P{selectedMonth}]]></textFieldExpression>
+            </textField>
+
+            <staticText>
+                <reportElement x="0" y="30" width="200" height="20"/>
+                <text><![CDATA[Total Number of Invoices:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="200" y="30" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+
+</jasperReport>
+
