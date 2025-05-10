@@ -68,7 +68,7 @@
             </textField>
             <textField>
                 <reportElement x="350" y="0" width="150" height="20"/>
-                <textFieldExpression><![CDATA["$" + String.format("%.2f", $F{totalRevenue})]]></textFieldExpression>
+                <textFieldExpression><![CDATA[String.format("%.2f", $F{totalRevenue})+" ILS"]]></textFieldExpression>
             </textField>
         </band>
     </detail>
