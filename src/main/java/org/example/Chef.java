@@ -1,12 +1,12 @@
 package org.example;
 
-public class chef {
+public class Chef {
     private String name;
     private String expertise;
     private int taskCount;
     private String email;
 
-    public chef(String name, String expertise, int taskCount) {
+    public Chef(String name, String expertise, int taskCount) {
         this.name = name;
         this.expertise = expertise;
         this.taskCount = taskCount;

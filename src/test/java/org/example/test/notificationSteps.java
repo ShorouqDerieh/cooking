@@ -19,9 +19,9 @@ public class notificationSteps {
     meal me;
     List<meal> meals;
     boolean sent;
-    chef cheff;
+    Chef cheff;
     //chefService service;
-    ArrayList<chef>chefs;
+    ArrayList<Chef> Chefs;
     EmailService service;
     @Given("i am a customer and my name is {string} and my email is {string}")
     public void iAmACustomerAndMyNameIsAndMyEmailIs(String arg0, String arg1) {
@@ -49,16 +49,16 @@ public class notificationSteps {
 
     @Given("i am a chef and my name is {string} and my email is {string}")
     public void iAmAChefAndMyNameIsAndMyEmailIs(String arg0, String arg1) {
-        cheff=new chef(arg0,"Baking",1);
+        cheff=new Chef(arg0,"Baking",1);
         cheff.setEmail(arg1);
-        chefs=new ArrayList<>();
-        chefs.add(cheff);
+        Chefs =new ArrayList<>();
+        Chefs.add(cheff);
 
     }
 
     @When("the kitchen manager assigned meal to me at {string}")
     public void theKitchenManagerAssignedMealToMeAt(String arg0) {
-        chefService.addTask(chefs,"Baking");
+        ChefService.addTask(Chefs,"Baking");
         service=new EmailService();
     }
 

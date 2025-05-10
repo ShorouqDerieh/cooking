@@ -5,9 +5,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.chef;
+import org.example.Chef;
 import org.example.tasks;
-import org.example.chefService;
+import org.example.ChefService;
 
 import java.util.ArrayList;
 
@@ -15,25 +15,25 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class tasksSteps {
-    ArrayList<chef> chefs;
+    ArrayList<Chef> Chefs;
    tasks task;
-    chef assignedChef=null;
+    Chef assignedChef=null;
     String notificationMessage;
     @Given("I am a kitchen manager")
     public void i_am_a_kitchen_manager() {
-       chefs=new ArrayList<>();
+       Chefs =new ArrayList<>();
     }
 @Given("there are available chefs with different expertise levels")
     public void availableChefs(){
-    chefs.add(new chef("Shorouq", "Baking", 3));
-    chefs.add(new chef("Hiba", "Sushi", 2));
-    chefs.add(new chef("Ahmad", "Pizza", 1));
-    chefs.add(new chef("Ali", "Baking", 0));
+    Chefs.add(new Chef("Shorouq", "Baking", 3));
+    Chefs.add(new Chef("Hiba", "Sushi", 2));
+    Chefs.add(new Chef("Ahmad", "Pizza", 1));
+    Chefs.add(new Chef("Ali", "Baking", 0));
 }
 @When("i am assign a cooking task to a chef based on workload and expertise")
     public void assignTasks(){
     task=new tasks("Baking");
-    assignedChef = chefService.addTask(chefs,task.getExpertiseRequired());
+    assignedChef = ChefService.addTask(Chefs,task.getExpertiseRequired());
     if (assignedChef != null) {
         assignedChef.incrementTask();
         notificationMessage = "Notification sent to " + assignedChef.getName();
@@ -52,9 +52,9 @@ public class tasksSteps {
 
     @Given("there are chefs with workloads and expertise")
     public void thereAreChefsWithWorkloadsAndExpertise() {
-        chefs = new ArrayList<>();
-        chefs.add(new chef("Tala", "Sushi", 2));
-        chefs.add(new chef("Ola", "Baking", 1));
+        Chefs = new ArrayList<>();
+        Chefs.add(new Chef("Tala", "Sushi", 2));
+        Chefs.add(new Chef("Ola", "Baking", 1));
     }
 
     @And("a new task requires {string}")
@@ -65,7 +65,7 @@ public class tasksSteps {
     @When("I assign the new task")
     public void iAssignTheNewTask() {
 
-        assignedChef = chefService.addTask(chefs,task.getExpertiseRequired());
+        assignedChef = ChefService.addTask(Chefs,task.getExpertiseRequired());
         if (assignedChef != null) {
             assignedChef.incrementTask();
             //notificationMessage = "Notification sent to " + assignedChef.getName();
@@ -85,9 +85,9 @@ public class tasksSteps {
 
     @Given("there are two chefs with {string} expertise and same workload")
     public void thereAreTwoChefsWithExpertiseAndSameWorkload(String arg0) {
-        chefs=new ArrayList<>();
-    chefs.add(new chef("Hiba", arg0, 2));
-    chefs.add(new chef("Shorouq", arg0, 2));
+        Chefs =new ArrayList<>();
+    Chefs.add(new Chef("Hiba", arg0, 2));
+    Chefs.add(new Chef("Shorouq", arg0, 2));
     }
 
     @Then("the task should be assigned to any of the available chefs")
