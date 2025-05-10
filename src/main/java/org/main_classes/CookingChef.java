@@ -1,9 +1,9 @@
 package main_classes;
 
-public class Chef {
+public class CookingChef {
     private String name;
 
-    public Chef(String name) {
+    public CookingChef(String name) {
         this.name = name;
     }
 

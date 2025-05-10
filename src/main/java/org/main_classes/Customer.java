@@ -2,7 +2,7 @@ package main_classes;
 //1.1
 import java.io.Serializable;
 import java.util.*;
-public class Customer implements Serializable {
+public class Customer  {
     private String id;
     private String name;
     private String dietaryPreferences;

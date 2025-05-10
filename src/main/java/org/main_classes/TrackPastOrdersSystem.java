@@ -22,7 +22,7 @@ public class TrackPastOrdersSystem {
 
     public void displayPastOrders(Customer customer) {
         if (customer != null && !customer.getOrders().isEmpty()) {
-       //     System.out.println("Past orders for customer " + customer.getName() + ":");
+            System.out.println("Past orders for customer " + customer.getName() + ":");
             for (String order : customer.getOrders()) {
         ///        System.out.println("- " + order);
             }
@@ -60,11 +60,11 @@ public class TrackPastOrdersSystem {
          //   System.out.println("Error: Customer not found.");
         }
     }
-    public List<String> getPastOrdersForCustomer(String id) {
-        Customer customer = customerOrders.get(id);
-        if (customer != null) {
-            return customer.getOrders();
-        }
-        return Arrays.asList();  // Return an empty list if no orders found
-    }
+//    public List<String> getPastOrdersForCustomer(String id) {
+//        Customer customer = customerOrders.get(id);
+//        if (customer != null) {
+//            return customer.getOrders();
+//        }
+//        return Arrays.asList();  // Return an empty list if no orders found
+//    }
 }

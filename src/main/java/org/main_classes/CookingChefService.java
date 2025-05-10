@@ -1,14 +1,14 @@
 package main_classes;
 import java.util.*;
 //1.1
-public class ChefService {
+public class CookingChefService {
 
     private CustomerService customerService;
 
-  public ChefService(CustomerService customerService) {
+  public CookingChefService(CustomerService customerService) {
        this.customerService = customerService;
     }
-    public ChefService() {
+    public CookingChefService() {
 
     }
     public Customer viewCustomerProfile(String customerId) {

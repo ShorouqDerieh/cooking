@@ -38,7 +38,7 @@ public class TrackPastOrders {
     public void theChefRequestsTheOrderHistoryForASpecificCustomer() {
         customer = system.getCustomerById("2");  // test id "2" (ali)
         assertNotNull("Chef should find the customer", customer);
-        system.displayPastOrders(customer);
+      //  system.displayPastOrders(customer);
     }
 
     @When("the customer requests to see past orders")

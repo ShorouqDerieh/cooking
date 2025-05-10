@@ -2,7 +2,6 @@ package org.example.test;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en.*;
 import main_classes.*;
 import org.junit.jupiter.api.Assertions;
 import java.util.*;
@@ -116,8 +115,8 @@ public class profile {
       //  Assertions.assertTrue(chefAction.toLowerCase().contains(currentCustomer.getDietaryPreferences()));
       //  Assertions.assertFalse(chefAction.toLowerCase().contains(currentCustomer.getAllergies()));
      //   ChefService c=new ChefService();
-        ChefService chefService = new ChefService();
-        customizedMeal = chefService.customizeMeal(currentCustomer);
+        CookingChefService cookingChefService = new CookingChefService();
+        customizedMeal = cookingChefService.customizeMeal(currentCustomer);
         Assertions.assertTrue(
                 customizedMeal.contains("vegetarian") && customizedMeal.contains("without peanuts"),
                 "Customized meal does not respect dietary preferences and allergies"
